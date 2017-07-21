@@ -7,7 +7,7 @@
     android:background="@color/colorPrimaryLight"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="school.coding.techkids.musicplayer_longth.ScrollingActivity"
-    tools:showIn="@layout/activity_scrolling">
+    tools:showIn="@layout/fragment_top_song">
 
     <RelativeLayout
         android:layout_width="match_parent"

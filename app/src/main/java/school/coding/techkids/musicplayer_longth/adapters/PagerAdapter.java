@@ -25,13 +25,13 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                DownloadFragment tab1 = new DownloadFragment();
+                MusicTypeFragment tab1 = new MusicTypeFragment();
                 return tab1;
             case 1:
-                MusicTypeFragment tab2 = new MusicTypeFragment();
+                FavouriteFragment tab2 = new FavouriteFragment();
                 return tab2;
             case 2:
-                FavouriteFragment tab3 = new FavouriteFragment();
+                DownloadFragment tab3 = new DownloadFragment();
                 return tab3;
             default:
                 return null;

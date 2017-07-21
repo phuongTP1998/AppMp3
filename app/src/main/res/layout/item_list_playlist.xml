@@ -21,14 +21,14 @@
       android:layout_toRightOf="@+id/iv_avatarSong"
       android:layout_marginTop="10dp"
       android:layout_marginLeft="20dp"
-      android:textSize="23sp"
+      android:textSize="20sp"
       android:textStyle="bold"
       android:textColor="@color/primary_text"/>
     <TextView
         android:id="@+id/tv_artist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:text="Artist"
         android:textColor="@color/primary_text"
         android:layout_below="@id/tv_song"

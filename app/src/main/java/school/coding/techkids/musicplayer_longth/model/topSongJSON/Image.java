@@ -6,10 +6,10 @@ package school.coding.techkids.musicplayer_longth.model.topSongJSON;
 
 public class Image {
     private String label;
-    private Attribute attribute;
+    private Attribute attributes;
     public Image(String label, Attribute attribute){
         this.label = label;
-        this.attribute = attribute;
+        this.attributes = attribute;
     }
 
     public String getLabel() {
@@ -21,18 +21,18 @@ public class Image {
     }
 
     public Attribute getAttribute() {
-        return attribute;
+        return attributes;
     }
 
     public void setAttribute(Attribute attribute) {
-        this.attribute = attribute;
+        this.attributes = attribute;
     }
 
     @Override
     public String toString() {
         return "Image{" +
                 "label='" + label + '\'' +
-                ", attribute=" + attribute +
+                ", attribute=" + attributes +
                 '}';
     }
 }

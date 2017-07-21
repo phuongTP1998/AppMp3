@@ -2,11 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="school.coding.techkids.musicplayer_longth.fragment.DownloadFragment">
+    tools:context="school.coding.techkids.musicplayer_longth.fragment.FavouriteFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="tab1" />
+        android:text="download" />
 
 </FrameLayout>

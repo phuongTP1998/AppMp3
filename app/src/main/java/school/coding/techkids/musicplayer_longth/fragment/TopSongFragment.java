@@ -57,7 +57,7 @@ public class TopSongFragment extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_scrolling, container, false);
+        View view = inflater.inflate(R.layout.fragment_top_song, container, false);
         ButterKnife.bind(this,view);
         setupUI(view);
         loadDatas();
@@ -73,9 +73,9 @@ public class TopSongFragment extends Fragment implements View.OnClickListener {
                 for(TopSongJSONModel topSongJSONModel : entry){
                     List<Image> images = new ArrayList<>();
                     for(Image image : topSongJSONModel.getSongImage()){
-//                        if(image.getAttribute().getHeight() == 170){
+                        if(image.getAttribute().getHeight() == 170){
                             images.add(image);
-//                        }
+                        }
                     }
                     topSongJSONModel.setSongImage(images);
                     topSongModelList.add(topSongJSONModel);
