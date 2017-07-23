@@ -3,7 +3,7 @@ package school.coding.techkids.musicplayer_longth.network;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-import school.coding.techkids.musicplayer_longth.model.TopSongRespondJSON;
+import school.coding.techkids.musicplayer_longth.model.topSongJSON.top_song.TopSongRespondJSON;
 
 /**
  * Created by trongphuong1011 on 7/21/2017.

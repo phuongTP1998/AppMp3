@@ -1,8 +1,6 @@
-package school.coding.techkids.musicplayer_longth.model.topSongJSON;
+package school.coding.techkids.musicplayer_longth.model.topSongJSON.top_song;
 
 import java.util.List;
-
-import school.coding.techkids.musicplayer_longth.model.TopSongJSONModel;
 
 /**
  * Created by trongphuong1011 on 7/21/2017.

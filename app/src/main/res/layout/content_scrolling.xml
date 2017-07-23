@@ -21,6 +21,7 @@
             android:layout_marginTop="10dp"
             android:text="Style Music"
             android:textSize="20sp"
+            android:textColor="@color/primary_text"
             android:textStyle="bold" />
 
         <TextView
@@ -30,6 +31,7 @@
             android:layout_below="@+id/tv_style_music"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:textColor="@color/primary_text"
             android:text="Text"
             android:textSize="15sp"
             android:textStyle="bold" />

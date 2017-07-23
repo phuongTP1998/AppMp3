@@ -1,4 +1,4 @@
-package school.coding.techkids.musicplayer_longth.model.topSongJSON;
+package school.coding.techkids.musicplayer_longth.model.topSongJSON.top_song;
 
 /**
  * Created by trongphuong1011 on 7/21/2017.

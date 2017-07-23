@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,7 @@ import retrofit2.Response;
 import school.coding.techkids.musicplayer_longth.R;
 import school.coding.techkids.musicplayer_longth.adapters.MusicTypeAdapter;
 import school.coding.techkids.musicplayer_longth.databases.MusicTypeModel;
+import school.coding.techkids.musicplayer_longth.events.OnClickMusicType;
 import school.coding.techkids.musicplayer_longth.managers.ScreenManager;
 import school.coding.techkids.musicplayer_longth.model.AllMusicTypesJSONModel;
 import school.coding.techkids.musicplayer_longth.model.MusicTypeJSONModel;
@@ -97,6 +100,7 @@ public class MusicTypeFragment extends Fragment implements View.OnClickListener 
     @Override
     public void onClick(View view) {
         MusicTypeModel musicTypeModel = (MusicTypeModel) view.getTag();
-        ScreenManager.openFragment(getActivity().getSupportFragmentManager(),new TopSongFragment(),R.id.layout_container,musicTypeModel);
+        EventBus.getDefault().postSticky(new OnClickMusicType(musicTypeModel));
+        ScreenManager.openFragment(getActivity().getSupportFragmentManager(),new TopSongFragment(),R.id.layout_container);
     }
 }

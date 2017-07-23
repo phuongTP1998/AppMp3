@@ -1,6 +1,6 @@
-package school.coding.techkids.musicplayer_longth.model;
+package school.coding.techkids.musicplayer_longth.model.topSongJSON.top_song;
 
-import school.coding.techkids.musicplayer_longth.model.topSongJSON.Feed;
+import school.coding.techkids.musicplayer_longth.model.topSongJSON.top_song.Feed;
 
 /**
  * Created by trongphuong1011 on 7/21/2017.

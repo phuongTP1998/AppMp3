@@ -13,9 +13,10 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 import school.coding.techkids.musicplayer_longth.R;
-import school.coding.techkids.musicplayer_longth.fragment.TopSongFragment;
-import school.coding.techkids.musicplayer_longth.model.TopSongJSONModel;
+import school.coding.techkids.musicplayer_longth.databases.TopSongModel;
+import school.coding.techkids.musicplayer_longth.model.topSongJSON.top_song.TopSongJSONModel;
 
 /**
  * Created by trongphuong1011 on 7/21/2017.
@@ -24,16 +25,16 @@ import school.coding.techkids.musicplayer_longth.model.TopSongJSONModel;
 public class TopSongAdapter extends RecyclerView.Adapter<TopSongAdapter.TopSongViewHolder> {
     private View view;
     private Context context;
-    private List<TopSongJSONModel> musicTypeModelList = new ArrayList<>();
+    private List<TopSongModel> topSongModels = new ArrayList<>();
     private View.OnClickListener onClickListener;
 
     public void setOnItemClick(View.OnClickListener onClickListener){
         this.onClickListener = onClickListener;
     }
 
-    public TopSongAdapter(Context context, List<TopSongJSONModel> musicTypeModelList) {
+    public TopSongAdapter(Context context, List<TopSongModel> topSongModels) {
         this.context = context;
-        this.musicTypeModelList = musicTypeModelList;
+        this.topSongModels = topSongModels;
     }
 
     @Override
@@ -46,12 +47,12 @@ public class TopSongAdapter extends RecyclerView.Adapter<TopSongAdapter.TopSongV
 
     @Override
     public void onBindViewHolder(TopSongViewHolder holder, int position) {
-        holder.setData(musicTypeModelList.get(position));
+        holder.setData(topSongModels.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return musicTypeModelList.size();
+        return topSongModels.size();
     }
 
 
@@ -66,13 +67,13 @@ public class TopSongAdapter extends RecyclerView.Adapter<TopSongAdapter.TopSongV
                 tvArtist = itemView.findViewById(R.id.tv_artist);
                 view = itemView;
             }
-            public void setData(TopSongJSONModel topSongJSONModel){
-                if(topSongJSONModel==null)
-                    return;
-                Picasso.with(context).load(topSongJSONModel.getSongImage().get(0).getLabel()).into(ivAvatar);
-                tvSongName.setText(topSongJSONModel.getSongName().getLabel());
-                tvArtist.setText(topSongJSONModel.getSongArtist().getLabel());
-                view.setTag(topSongJSONModel);
+            public void setData(TopSongModel topSongModel){
+                if(topSongModel != null)
+//                Picasso.with(context).load(topSongJSONModel.getSongImage().get(0).getLabel()).into(ivAvatar);
+                    Picasso.with(context).load(topSongModel.getImage().getLabel()).transform(new CropCircleTransformation()).into(ivAvatar);
+                    tvSongName.setText(topSongModel.getSongName().getLabel());
+                    tvArtist.setText(topSongModel.getSingerName().getLabel());
+                    view.setTag(topSongModel);
+                }
             }
         }
-}

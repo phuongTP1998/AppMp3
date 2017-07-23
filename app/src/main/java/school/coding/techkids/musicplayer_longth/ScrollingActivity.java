@@ -6,15 +6,24 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 
 public class ScrollingActivity extends AppCompatActivity {
-
+    private ImageView ivBack;
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_top_song);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ivBack = (ImageView) findViewById(R.id.iv_back);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_top_song);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

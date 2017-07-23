@@ -12,9 +12,7 @@ import school.coding.techkids.musicplayer_longth.databases.MusicTypeModel;
  */
 
 public class ScreenManager {
-    public static MusicTypeModel musicTypeClicked;
-    public static void openFragment(FragmentManager fragmentManager, Fragment fragment, int layoutID, MusicTypeModel musicTypeModel){
-        musicTypeClicked = musicTypeModel;
+    public static void openFragment(FragmentManager fragmentManager, Fragment fragment, int layoutID){
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.layout_container, fragment);
         fragmentTransaction.commit();
