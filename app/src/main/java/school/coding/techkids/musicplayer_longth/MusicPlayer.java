@@ -79,7 +79,7 @@ public class MusicPlayer extends AppCompatActivity {
             }
         });
     }
-
+//ToDo: em định add vào Transaction thế này mà ko được, vướng cái PagerAdapter
 //    public void addFragment(View view, int tabPosition){
 //        FragmentManager fragmentManager = getSupportFragmentManager();
 //        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

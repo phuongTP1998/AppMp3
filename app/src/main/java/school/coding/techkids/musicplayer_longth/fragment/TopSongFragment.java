@@ -35,6 +35,7 @@ import school.coding.techkids.musicplayer_longth.adapters.TopSongAdapter;
 import school.coding.techkids.musicplayer_longth.databases.MusicTypeModel;
 import school.coding.techkids.musicplayer_longth.databases.TopSongModel;
 import school.coding.techkids.musicplayer_longth.events.OnClickMusicType;
+import school.coding.techkids.musicplayer_longth.events.OnClickTopSong;
 import school.coding.techkids.musicplayer_longth.managers.MusicManager;
 import school.coding.techkids.musicplayer_longth.managers.ScreenManager;
 import school.coding.techkids.musicplayer_longth.model.topSongJSON.top_song.TopSongJSONModel;
@@ -149,6 +150,9 @@ public class TopSongFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
 //        TopSongJSONModel topSongJSONModel = (TopSongJSONModel) view.getTag();
         TopSongModel topSongModel = (TopSongModel) view.getTag();
+        MiniPlayerFragment miniPlayerFragment = new MiniPlayerFragment();
+        EventBus.getDefault().postSticky(new OnClickTopSong(topSongModel));
+        ScreenManager.openFragment(getActivity().getSupportFragmentManager(), miniPlayerFragment,R.layout.fragment_mini_player );
         MusicManager.loadSearchSong(topSongModel, getContext());
     }
 }

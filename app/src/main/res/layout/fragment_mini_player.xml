@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimaryLight"
+    android:clickable="true"
+    android:layout_height="80dp">
+    <SeekBar
+        android:id="@+id/seekbar_mini_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekbar_mini_player">
+        <ImageView
+            android:id="@+id/iv_avatar_mini_player"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/tv_song_name_mini_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_avatar_mini_player"
+            android:text="Khong phai dang vua dau"
+            android:textColor="@color/primary_text"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/tv_artist_mini_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_song_name_mini_player"
+            android:layout_toRightOf="@id/iv_avatar_mini_player"
+            android:layout_marginTop="2dp"
+            android:text="Son Tung MTP"
+            android:textColor="@color/primary_text"
+            android:textSize="15sp"/>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_mini_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp" />
+    </RelativeLayout>
+</RelativeLayout>
