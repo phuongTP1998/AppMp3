@@ -16,8 +16,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -27,6 +30,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -153,9 +157,23 @@ public class TopSongFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
 //        TopSongJSONModel topSongJSONModel = (TopSongJSONModel) view.getTag();
         TopSongModel topSongModel = (TopSongModel) view.getTag();
-        MiniPlayerFragment miniPlayerFragment = new MiniPlayerFragment();
+//        MiniPlayerFragment miniPlayerFragment = new MiniPlayerFragment();
         EventBus.getDefault().postSticky(new OnClickTopSong(topSongModel));
-        ScreenManager.openFragment(getActivity().getSupportFragmentManager(), miniPlayerFragment,R.layout.fragment_mini_player );
+//        ScreenManager.openFragment(getActivity().getSupportFragmentManager(), miniPlayerFragment,R.layout.fragment_mini_player );
         MusicManager.loadSearchSong(topSongModel, getContext());
+        setDataforMiniPlayer(topSongModel);
+    }
+    private void setDataforMiniPlayer(TopSongModel topSongModel){
+        RelativeLayout rlMiniPlayer = getActivity().findViewById(R.id.rlayout_mini);
+        rlMiniPlayer.setVisibility(View.VISIBLE);
+
+        ImageView ivAvatarMiniPlayer = getActivity().findViewById(R.id.iv_avatar_mini_player);
+        TextView tvSongMiniPlayer = getActivity().findViewById(R.id.tv_song_name_mini_player);
+        TextView tvArtistMiniPlayer = getActivity().findViewById(R.id.tv_artist_mini_player);
+
+        tvSongMiniPlayer.setText(topSongModel.getSongName().getLabel());
+        tvArtistMiniPlayer.setText(topSongModel.getSingerName().getLabel());
+        Picasso.with(getContext()).load(topSongModel.getImage().getLabel())
+                .transform(new CropCircleTransformation()).into(ivAvatarMiniPlayer);
     }
 }

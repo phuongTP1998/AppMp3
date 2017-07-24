@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,6 +28,8 @@ public class MusicPlayer extends AppCompatActivity {
     private android.support.v4.view.PagerAdapter pagerAdapter;
     private ViewPager viewPager;
 
+    RelativeLayout relativeLayoutMini;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,9 @@ public class MusicPlayer extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        relativeLayoutMini = (RelativeLayout) findViewById(R.id.rlayout_mini);
+        relativeLayoutMini.setVisibility(View.GONE);
 
         pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         viewPager = (ViewPager) findViewById(R.id.viewpager);

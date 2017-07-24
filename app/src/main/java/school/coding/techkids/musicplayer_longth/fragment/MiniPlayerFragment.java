@@ -37,13 +37,13 @@ public class MiniPlayerFragment extends Fragment {
     TextView tvArtistMini;
     private TopSongModel topSongModel;
     @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_mini_player,container,false);
-        setupUI(view);
-        loadData();
-        return view;
-    }
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+//        View view = inflater.inflate(R.layout.fragment_mini_player,container,false);
+//        setupUI(view);
+//        loadData();
+//        return view;
+//    }
 
     public void setupUI(View view) {
         ButterKnife.bind(this,view);
