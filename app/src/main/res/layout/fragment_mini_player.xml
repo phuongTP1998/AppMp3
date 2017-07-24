@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:background="@color/colorPrimaryLight"
     android:clickable="true"
+    android:layout_alignParentBottom="true"
     android:layout_height="80dp">
     <SeekBar
         android:id="@+id/seekbar_mini_player"

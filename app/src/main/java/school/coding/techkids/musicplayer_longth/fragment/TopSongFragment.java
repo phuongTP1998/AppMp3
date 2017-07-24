@@ -57,8 +57,8 @@ public class TopSongFragment extends Fragment implements View.OnClickListener {
     TextView tvMusicStyle;
     @BindView(R.id.tv_numberSongs)
     TextView tvNumberSongs;
-    @BindView(R.id.toolbar_top_song)
-    Toolbar toolbar;
+    @BindView(R.id.iv_back_top_song)
+    ImageView ivBackTopSong;
     private static final String TAG = MusicTypeFragment.class.toString();
     List<TopSongModel> topSongModelList = new ArrayList<>();
     TopSongAdapter topSongAdapter;
@@ -78,16 +78,6 @@ public class TopSongFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_top_song, container, false);
         ButterKnife.bind(this, view);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.back));
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getFragmentManager().popBackStack();
-                getActivity().onBackPressed();
-            }
-        });
         setupUI(view);
         loadDatas();
         return view;
@@ -139,6 +129,19 @@ public class TopSongFragment extends Fragment implements View.OnClickListener {
         topSongAdapter.setOnItemClick(this);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
         rvPlaylist.addItemDecoration(dividerItemDecoration);
+
+        ivBackTopSong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(getFragmentManager().getBackStackEntryCount()>0){
+                    getFragmentManager().popBackStack();
+                }
+                else {
+                    Toast.makeText(getContext(), "R i p",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
 
     @Subscribe(sticky = true)

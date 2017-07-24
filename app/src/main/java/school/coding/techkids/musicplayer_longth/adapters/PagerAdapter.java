@@ -14,38 +14,32 @@ import school.coding.techkids.musicplayer_longth.fragment.MusicTypeFragment;
  */
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
-    int mNumOfTabs;
 
-    public PagerAdapter(FragmentManager fm, int NumOfTabs) {
+    public PagerAdapter(FragmentManager fm) {
         super(fm);
-        this.mNumOfTabs = NumOfTabs;
     }
 
     @Override
     public Fragment getItem(int position) {
+        Fragment fragment = null;
 
         switch (position) {
             case 0:
-                MusicTypeFragment tab1 = new MusicTypeFragment();
-                return tab1;
+                fragment = new MusicTypeFragment();
+                break;
             case 1:
-                FavouriteFragment tab2 = new FavouriteFragment();
-                return tab2;
+                fragment = new FavouriteFragment();
+                break;
             case 2:
-                DownloadFragment tab3 = new DownloadFragment();
-                return tab3;
-            default:
-                return null;
+                fragment = new DownloadFragment();
+                break;
         }
+        return fragment;
     }
 
     @Override
     public int getCount() {
-        return mNumOfTabs;
+        return 3;
     }
 
-//    @Override
-//    public Fragment getItem(int position) {
-//        return null;
-//    }
 }

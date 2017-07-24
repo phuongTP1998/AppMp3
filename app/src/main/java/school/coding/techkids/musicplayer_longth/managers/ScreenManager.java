@@ -14,7 +14,10 @@ import school.coding.techkids.musicplayer_longth.databases.MusicTypeModel;
 public class ScreenManager {
     public static void openFragment(FragmentManager fragmentManager, Fragment fragment, int layoutID){
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.layout_container, fragment);
+//        fragmentTransaction.add(R.id.layout_container, fragment);
+//        fragmentTransaction.commit();
+        fragmentTransaction.add(layoutID, fragment);
+        fragmentTransaction.addToBackStack(fragment.getClass().getSimpleName());
         fragmentTransaction.commit();
     }
 }
