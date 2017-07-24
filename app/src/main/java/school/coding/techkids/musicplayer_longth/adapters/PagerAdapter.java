@@ -3,6 +3,7 @@ package school.coding.techkids.musicplayer_longth.adapters;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 
 import school.coding.techkids.musicplayer_longth.fragment.DownloadFragment;
 import school.coding.techkids.musicplayer_longth.fragment.FavouriteFragment;
@@ -42,4 +43,9 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return mNumOfTabs;
     }
+
+//    @Override
+//    public Fragment getItem(int position) {
+//        return null;
+//    }
 }
