@@ -8,6 +8,7 @@
         android:id="@+id/layout_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/rlayout_mini"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
@@ -45,7 +46,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:background="@color/colorPrimaryLight"
-            android:visibility="visible"
+            android:visibility="gone"
             android:clickable="true"
             android:elevation="10dp"
             android:layout_height="80dp"
@@ -54,8 +55,10 @@
             <SeekBar
                 android:id="@+id/seekbar_mini_player"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:thumb="@null"/>
             <RelativeLayout
+                android:id="@+id/rl_click"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/seekbar_mini_player">
@@ -73,6 +76,8 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/iv_avatar_mini_player"
                     android:text="Khong phai dang vua dau"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:textColor="@color/primary_text"
                     android:textStyle="bold"
                     android:textSize="16sp"/>

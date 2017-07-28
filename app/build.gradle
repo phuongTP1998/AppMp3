@@ -34,6 +34,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'jp.wasabeef:picasso-transformations:2.1.2'
+    compile 'com.github.mkaflowski:HybridMediaPlayer:1.4.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
     compile files("libs/commons-lang3-3.1.jar")
     compile files("libs/guava-14.0.1.jar")

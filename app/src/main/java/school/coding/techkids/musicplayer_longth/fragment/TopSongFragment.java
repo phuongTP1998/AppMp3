@@ -3,20 +3,18 @@ package school.coding.techkids.musicplayer_longth.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ScrollingView;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,8 +34,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import school.coding.techkids.musicplayer_longth.R;
 import school.coding.techkids.musicplayer_longth.adapters.TopSongAdapter;
+import school.coding.techkids.musicplayer_longth.databases.MiniSongModel;
 import school.coding.techkids.musicplayer_longth.databases.MusicTypeModel;
 import school.coding.techkids.musicplayer_longth.databases.TopSongModel;
+import school.coding.techkids.musicplayer_longth.events.OnClickMiniSong;
 import school.coding.techkids.musicplayer_longth.events.OnClickMusicType;
 import school.coding.techkids.musicplayer_longth.events.OnClickTopSong;
 import school.coding.techkids.musicplayer_longth.managers.MusicManager;
@@ -47,6 +47,8 @@ import school.coding.techkids.musicplayer_longth.model.topSongJSON.top_song.TopS
 import school.coding.techkids.musicplayer_longth.model.topSongJSON.top_song.Image;
 import school.coding.techkids.musicplayer_longth.network.GetTopSong;
 import school.coding.techkids.musicplayer_longth.network.RetrofitFactory;
+
+import static android.view.View.GONE;
 
 /**
  * Created by trongphuong1011 on 7/20/2017.
@@ -152,28 +154,31 @@ public class TopSongFragment extends Fragment implements View.OnClickListener {
     public void onReceivedMusicType(OnClickMusicType onClickMusicType) {
         musicTypeModel = onClickMusicType.getMusicTypeModel();
     }
-
     @Override
     public void onClick(View view) {
-//        TopSongJSONModel topSongJSONModel = (TopSongJSONModel) view.getTag();
         TopSongModel topSongModel = (TopSongModel) view.getTag();
-//        MiniPlayerFragment miniPlayerFragment = new MiniPlayerFragment();
         EventBus.getDefault().postSticky(new OnClickTopSong(topSongModel));
-//        ScreenManager.openFragment(getActivity().getSupportFragmentManager(), miniPlayerFragment,R.layout.fragment_mini_player );
-        MusicManager.loadSearchSong(topSongModel, getContext());
+        SeekBar seekBar = getActivity().findViewById(R.id.seekbar_mini_player);
+        FloatingActionButton floatingActionButton = getActivity().findViewById(R.id.fab_mini_player);
+        MusicManager.loadSearchSong(topSongModel ,getContext(), floatingActionButton,seekBar);
         setDataforMiniPlayer(topSongModel);
     }
+
+    public MiniSongModel miniSongModel = new MiniSongModel();
+
     private void setDataforMiniPlayer(TopSongModel topSongModel){
         RelativeLayout rlMiniPlayer = getActivity().findViewById(R.id.rlayout_mini);
-        rlMiniPlayer.setVisibility(View.VISIBLE);
-
         ImageView ivAvatarMiniPlayer = getActivity().findViewById(R.id.iv_avatar_mini_player);
         TextView tvSongMiniPlayer = getActivity().findViewById(R.id.tv_song_name_mini_player);
         TextView tvArtistMiniPlayer = getActivity().findViewById(R.id.tv_artist_mini_player);
-
+        rlMiniPlayer.setVisibility(View.VISIBLE);
         tvSongMiniPlayer.setText(topSongModel.getSongName().getLabel());
         tvArtistMiniPlayer.setText(topSongModel.getSingerName().getLabel());
         Picasso.with(getContext()).load(topSongModel.getImage().getLabel())
                 .transform(new CropCircleTransformation()).into(ivAvatarMiniPlayer);
+
+//        miniSongModel.setImageLabel(topSongModel.getImage().getLabel());
+//        miniSongModel.setTvSong(topSongModel.getSongName().getLabel());
+//        miniSongModel.setTvArtist(topSongModel.getSingerName().getLabel());
     }
 }

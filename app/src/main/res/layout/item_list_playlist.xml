@@ -21,6 +21,8 @@
       android:layout_toRightOf="@+id/iv_avatarSong"
       android:layout_marginTop="10dp"
       android:layout_marginLeft="20dp"
+      android:maxLines="1"
+      android:ellipsize="end"
       android:textSize="20sp"
       android:textStyle="bold"
       android:textColor="@color/primary_text"/>
