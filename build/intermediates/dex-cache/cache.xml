@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Downloads\APPTK-MusicApp-master\APPTK-MusicApp-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\User\Downloads\APPTK-MusicApp-master\APPTK-MusicApp-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_4ff0cab5ed5f2a253bf782196c04baa7d57dad81\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Downloads\APPTK-MusicApp-master\APPTK-MusicApp-master\app\libs\commons-lang3-3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="905075e6c80f206bbe6cf1e809d2caa69f420c76">
+        <dex dex="C:\Users\User\Downloads\APPTK-MusicApp-master\APPTK-MusicApp-master\app\build\intermediates\transforms\dex\debug\folders\1000\2\commons-lang3-3.1_0149941f83d14c23632b92725ce04144d5ad04b0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Downloads\APPTK-MusicApp-master\APPTK-MusicApp-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c354041e7ed8ceec910f392f887d6f0649d160db">
+        <dex dex="C:\Users\User\Downloads\APPTK-MusicApp-master\APPTK-MusicApp-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7a7d5ba51b6a2962c1bf3d6f9aa6b47f4f8d5191\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Downloads\APPTK-MusicApp-master\APPTK-MusicApp-master\app\libs\guava-14.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="69e12f4c6aeac392555f1ea86fab82b5e5e31ad4">
+        <dex dex="C:\Users\User\Downloads\APPTK-MusicApp-master\APPTK-MusicApp-master\app\build\intermediates\transforms\dex\debug\folders\1000\2\guava-14.0.1_3fb7e7c51c7dcf3e4173ce7761deaca76edc2e35\classes.dex" />
+    </item>
+
+</items>
